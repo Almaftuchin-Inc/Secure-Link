@@ -127,77 +127,89 @@ a.btn-default:active,a.btn-default:focus{background-color:#e6e6e6!important;}
   </style>
 </head>
 <body>
-<div class="text-center margin-bottom-20">
-<h3>Advertise</h3>
-KODE IKLAN DISINI
-  </div>
-
-<div class="row margin-bottom-20">
-  <div class="col-md-6">
-<div class="panel panel-primary">
-    <div class="panel-heading text-center"><h2><i class="fa fa-shield"></i> Safe Link Converter <i class="fa fa-shield"></i></h2></div>
-        <div class="panel-body text-center">
-          <p class="text-primary margin-bottom-20">Encrypting your link and protect the link from viruses, malware, thief, etc!<br/>Made your link safe to visit.</p>
-
-<div class="progress" id="daplong">
-    <div class="progress-bar progress-bar-striped active six-sec-ease-in-out" role="progressbar" data-transitiongoal="100"></div>
-</div>
-<button id="download2" class="alert alert-dismissible alert-success btn-lg" style='display:none'><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> <strong>Well done!</strong> you have successfully gained access to Decrypted Link. <i class="fa fa-hand-o-down slideInDownThumb" aria-hidden="true"></i></button>
-
+<div class='row'>
+<div class='container'>
+  <div class='col-md-8 col-md-offset-2'>
+      <div class='btn btn-info margin-bottom-20' id='btnInfo'>
+        <button class='close close-copy' onclick='document.getElementById(&quot;btnInfo&quot;).style.display = &quot;none&quot;' type='button'><span aria-hidden='true'>&#215;</span></button>
+        <h4>Link has been <strong>copied to clipboard!</strong></h4>
+      </div>
+    <div class='panel panel-primary'>
+      <div class='panel-heading'><div class='panel-title text-center'><h2><i class='fa fa-shield'/> <strong>Safe Link Converter</strong></h2></div></div>
+      <div class='panel-body'>
+        <div class='form-group'>
+          <div class='input-group'>
+            <span class='input-group-addon'><i class='fa fa-link'/></span>
+            <input class='form-control' id='inputURL' required='required' type='url'/>
+            <span class='input-group-btn'>
+<button class='btn btn-primary' data-target='#safeLINK' data-toggle='collapse' type='button'><i class='fa fa-shield'/> <strong>Safe Link Now!</strong></button>
+</span>
+          </div>
+        </div>
+        <script src='https://secure.almaftuchin.com/assets/js/secure.js' type='text/javascript'/>
+        <div class='collapse' id='safeLINK'>
+          <div class='form-group has-success'>
+            <div class='input-group'>
+              <span class='input-group-addon'><strong>Result:</strong> <i aria-hidden='true' class='fa fa-check'/></span>
+            <input class='form-control' id='resultLink' onclick='this.focus();this.select()' readonly='readonly' required='required' type='text'/></div>
+            <br/>
+            <button class='alert alert-dismissible alert-success btn-lg btn-block text-center'><i aria-hidden='true' class='fa fa-thumbs-o-up'/> <strong>Well done!</strong> you have successfully encrypted your link.</button>
+            <div class='text-center'>
+            <button class='btn btn-sm btn-success' data-clipboard-target='resultLink' data-target='#safeLINK' data-toggle='collapse' id='btnCopy' type='submit'><i aria-hidden='true' class='fa fa-files-o'/> <strong>Copy your link to clipboard!</strong></button>
+            </div>
+          </div>
         </div>
       </div>
-</div>
-  <div class="col-md-6 text-left">
-<div class="panel panel-info">
-  <!-- Default panel contents -->
-  <div class="panel-heading"><h2><i class="fa fa-question-circle-o" aria-hidden="true"></i> How to use our tool:</h2></div>
-  <div class="panel-body">
-<ol>
-<li>Click on <strong>How To Use</strong> menu above.</li>
-<li>Click on the code and <kbd><kbd>CTRL</kbd> + <kbd>C</kbd></kbd> on your keyboard.</li>
-<li>Paste the code in your HTML blog theme before the <mark>&lt;/body&gt;</mark>.</li>
-<li>Save your HTML blog theme. you are done!</li>
-<li>Now, your blog's outbound links was encrypted!</li>
-</ol>
+    </div>
   </div>
 </div>
-</div><div class="clear"></div>
 </div>
 
-<div class="row margin-bottom-20">
-  <div class="col-md-4 text-center">
-<h3>Advertise</h3>
-KODE IKLAN DISINI
-</div>
-  <div class="col-md-4 margin-top-25">
-<div class="panel panel-success text-center">
-<div class="panel-heading">
-<h3 class="panel-title">
-<b>Your link show here</b> <i aria-hidden="true" class="fa fa-hand-o-down"></i></h3>
-</div>
-<div class="panel-body">
-<script src="https://cdn.rawgit.com/dedi96/safelink/813ce72f/safelinkga.js" type="text/javascript"></script>
-<script type="text/javascript">
-var currentURL=location.href;
-var str = currentURL;
-var res = str.replace("https://secure.almaftuchin.com/url?s=", "");
-document.write('<button type="button" id="download" class="Visit_Link btn btn-success" onclick="changeLink();" style="display: none;"><strong>Visit Link</strong> <i class="fa fa-external-link" aria-hidden="true"></i></button>')
+
+
+
+
+
+
+
+
+
+
+<script type='text/javascript'>
+//<![CDATA[
+function myCopy() {
+  var copyText = document.getElementById("resultLink");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  
+  var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Copied";
+}
+
+function outFunc() {
+  var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Copy Link";
+}
+  var output = document.getElementById('resultLink'),
+    input = document.getElementById('inputURL');
+  input.onkeyup = function() {
+    if (input.value != "") {
+      output.value = "https://secure.almaftuchin.com/url?s=" + Base64.encode(this.value); //change with your link
+    } else {
+      output.value = "";
+    }
+  }
+//]]>
 </script>
-  </div>
-</div>
-</div>
- <div class="col-md-4 text-center">
-<h3>Advertise</h3>
-KODE IKLAN DISINI
-</div>
-<div class="clear"></div>
-</div>
 
-<div class="container">
-  <div class="text-left">
 
-  </div>
-</div>
+
+      
+      
+      
+      
+
   
   
 <script src='https://secure.almaftuchin.com/assets/js/secure.js' type='text/javascript'/>
@@ -211,5 +223,69 @@ auto_safelink();
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'/>
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'/>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-progressbar/0.9.0/bootstrap-progressbar.min.js' type='text/javascript'/>
+
+
+
+
+
+<script type='text/javascript'>
+//<![CDATA[
+var blog = document.location.hostname;
+var slug = document.location.pathname;
+var ctld = blog.substr(blog.lastIndexOf("."));
+if (ctld != ".com") {
+var ncr = "https://" + blog.substr(0, blog.indexOf("."));
+ncr += ".blogspot.com/ncr" + slug;
+window.location.replace(ncr); };
+
+var currentURL=location.href;
+var str = currentURL;
+  var res = str.replace("http://www.safelink.ga/p/generate.html?url=", "");
+$(".Visit_Link").hide();
+function changeLink(){
+    var decodedString = Base64.decode(res);
+    window.open(decodedString,'_self')
+}
+
+function generate() {
+    var linkDL = document.getElementById("download"),
+        linkAL = document.getElementById("download2"),
+        btn = document.getElementById("btn"),
+        notif = document.getElementById("daplong"),
+        direklink = document.getElementById("download").href,
+        waktu = 4;
+    var teks_waktu = document.createElement("span");
+    linkDL.parentNode.replaceChild(teks_waktu, linkDL);
+    var id;
+    id = setInterval(function () {
+        waktu--;
+        if (waktu < 0) {
+            teks_waktu.parentNode.replaceChild(linkDL, teks_waktu);
+            clearInterval(id);
+            notif.style.display = "none";
+            linkDL.style.display = "inline";
+            linkAL.style.display = "inline";
+        } else {
+            teks_waktu.innerHTML = "<h3 class='text-danger'>Link will appear in " + waktu.toString() + " Second</h3>";
+            btn.style.display = "none";
+        }
+    }, 2000);
+}
+
+cookieOptions = {
+    msg: "This site uses cookies to help deliver services. By using this site, you agree to the use of cookies.",
+    link: "https://secure.almaftuchin.com/cookies",
+    close: "Got it!",
+    learn: "Learn More" };
+//]]>
+</script>
+
+
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+
+
+
 </body>
 </html>
