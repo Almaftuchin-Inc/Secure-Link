@@ -45,5 +45,184 @@ li a:hover:not(.active) {
   <li style="float:right"><a href="https://ko-fi.com/almaftuchin/?hidefeed=true&widget=true&embed=true&preview=true" target="_blank">Donate</a></li>
 </ul>
 </center>
+  
+
+<!-- Safe -->
+ <div class='row'>
+<div class='container'>
+  <div class='col-md-8 col-md-offset-2'>
+      <div class='btn btn-info margin-bottom-20' id='btnInfo'>
+        <button class='close close-copy' onclick='document.getElementById(&quot;btnInfo&quot;).style.display = &quot;none&quot;' type='button'><span aria-hidden='true'>&#215;</span></button>
+        <h4>Link has been <strong>copied to clipboard!</strong></h4>
+      </div>
+    <div class='panel panel-primary'>
+      <div class='panel-heading'><div class='panel-title text-center'><h2><i class='fad fa-link'/> <strong>Safe Link For Creator</strong></h2></div></div>
+      <div class='panel-body'>
+        <div class='form-group'>
+          <div class='input-group'>
+            <span class='input-group-addon'><i class='fad fa-globe'/></span>
+            <input class='form-control' id='inputURL' placeholder='https://' required='required' type='url'/>
+            <span class='input-group-btn'>
+<button class='btn btn-primary' data-target='#safeLINK' data-toggle='collapse' type='button'><i class='fad fa-shield-virus'/> <strong>Safe Link Now!</strong></button>
+</span>
+          </div>
+        </div>
+        <script src='https://secure.almaftuchin.com/assets/js/secure.js' type='text/javascript'/>
+        <div class='collapse' id='safeLINK'>
+          <div class='form-group has-success'>
+            <div class='input-group'>
+              <span class='input-group-addon'><strong>Result:</strong> <i aria-hidden='true' class='fa fa-check'/></span>
+            <input class='form-control' id='resultLink' onclick='this.focus();this.select()' readonly='readonly' required='required' type='text'/></div>
+            <br/>
+            <button class='alert alert-dismissible alert-success btn-lg btn-block text-center'><i aria-hidden='true' class='fa fa-thumbs-o-up'/> <strong>Well done!</strong> Copy Your link and Share to Your friends.</button>
+            <div class='text-center' id='tooltip'>
+			<button class='kopet' onclick='myCopy()' onmouseout='outFunc()'><span class='tooltiptext' id='myTooltip'>Copy Link</span><i class='fad fa-copy'/> Copy Link</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- Safe -->
+  
+<!-- Safe Style -->
+<style>
+#tooltip {
+  position: relative;
+}
+
+#tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+#tooltip .tooltiptext::after {
+  content: &quot;&quot;;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+#tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+button.kopet:hover {background:#562ba2!important}
+button.kopet {
+    width: 150px;
+    height: 40px;
+    background: #673bb7;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 3px;
+    border-style: none;
+}
+.panel-primary&gt;.panel-heading {
+    color: #fff;
+    background-color: #673AB7 !important;
+    border-color: #673AB7 !important;
+      background: -webkit-linear-gradient(-19deg, rgb(78, 31, 213) 41%, rgb(151, 27, 209) 100%) !important;
+}
+.panel-primary {
+    border-color: #673bb7 !important;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #673bb7;
+    border-color: #673bb7;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #562ba2!important;
+    border-color: #562ba2!important;
+}
+.panel-info&gt;.panel-heading {
+    color: #fff;
+    background-color: #673AB7 !important;
+    border-color: #673AB7 !important;
+      background: -webkit-linear-gradient(-19deg, rgb(78, 31, 213) 41%, rgb(151, 27, 209) 100%);
+}
+.panel-info {
+    border-color: #673bb7 !important;
+}
+.alert-info {
+    color: #fff;
+    background-color: #673bb7 !important;
+    border-color: #673bb7 !important;
+  background: -webkit-linear-gradient(-19deg, rgb(78, 31, 213) 41%, rgb(151, 27, 209) 100%);
+}
+a {
+    color: #673bb7 !important;
+    text-decoration: none;
+}
+.btn-primary.focus, .btn-primary:focus{background-color: #673bb7 !important;}
+.alert-success {
+    color: #673bb7;
+    background-color: #d1b8ff !important;
+    border-color: #d1b8ff !important;
+}
+.has-success .input-group-addon {
+    color: #673bb7 !important;
+    background-color: #d1b8ff !important;
+    border-color: #d1b8ff !important;
+}
+.input-group-addon:first-child {
+    border-right: 0;
+    background: #673bb7 !important;
+    color: #fff !important;
+}
+.has-success .form-control {
+    border-color: #673bb7 !important;
+}
+</style>
+<!-- Safe Style -->
+
+<!-- Safe JS -->
+<script type='text/javascript'>
+//<![CDATA[
+function myCopy() {
+  var copyText = document.getElementById("resultLink");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  
+  var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Copied";
+}
+
+function outFunc() {
+  var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Copy Link";
+}
+  var output = document.getElementById('resultLink'),
+    input = document.getElementById('inputURL');
+  input.onkeyup = function() {
+    if (input.value != "") {
+      output.value = "https://secure.almaftuchin.com/url?s=" + Base64.encode(this.value); //change with your link
+    } else {
+      output.value = "";
+    }
+  }
+//]]>
+</script>
+<!-- Safe JS -->
 </body>
 </html>
