@@ -186,21 +186,84 @@ h2.noadbheader {color: #fff;}
 #almaftuchinblock .inner:before{background: url(https://cdn.discordapp.com/attachments/185046628732895232/204497752091000832/bg3.svg)50% 50% fixed;}
 </style>
 </head>
-<body>
+<body onload='generate()'>
 <!-- Navigasi -->
-<center>
-<ul class="navigasi">
-  <li><a class="active" href="/">Secure Link</a></li>
-  <li><a href="/">Home</a></li>
-  <li><a href="https://blog.almaftuchin.com" target="_blank">Blog</a></li>
-  <li><a href="https://www.almaftuch.in" target="_blank">Apk Mod</a></li>
-  <li><a href="https://www.almaftuchin.com" target="_blank">Store</a></li>
-  <li style="float:right"><a href="https://ko-fi.com/almaftuchin/?hidefeed=true&widget=true&embed=true&preview=true" target="_blank">Donate</a></li>
-</ul>
-</center>
-<!-- Navigasi -->
+<div class='collapse navbar-collapse' id='navbar'>
+          <ul class='nav navbar-nav'>
+            <li><a href='https://url.almaftuchin.com' title='Home'><i class='fa-duotone fa-house-chimney'/> Home</a></li>
+            <li><a href='/about' title='About'><i class='fa-duotone fa-person'/> About</a></li>
+            <li><a href='/privacy' title='Privacy'><i class='fa-duotone fa-scroll-old'/> Privacy</a></li>
+            <li><a href='/tos' title='Terms of Service'><i class='fa-duotone fa-stamp'/> Terms</a></li>
+            <li><a href='/disclaimer' title='Disclaimer'><i class='fa-duotone fa-file-certificate'/> Disclaimer</a></li>
+            <li><a href='/contact' title='Contact'><i class='fa-duotone fa-mailbox-flag-up'/> Contact Us</a></li>
+          </ul>
+          <ul class='nav navbar-nav navbar-right'>
+            <b:if cond='data:blog.url == &quot;https://url.almaftuchin.com/p/go.html&quot;'>
+            <li><a data-target='.how-to-use' data-toggle='modal' href='javascript:void(0)' title='Developer Tool'><i class='fa-duotone fa-window'/></a></li>
+            </b:if>
+            <li><a data-target='.how-to-get' data-toggle='modal' href='javascript:void(0)' title='Notification'><i class='fa-duotone fa-bell'/></a></li>
+            <b:if cond='data:blog.pageType != &quot;item&quot; and data:blog.pageType != &quot;static_page&quot;'>
+            <li><a href='https://www.almaftuchin.com' role='button' target='_blank' title='Store'><i class='fa-duotone fa-bags-shopping'/></a></li>
+            </b:if>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
 
-<!-- Safe -->
+
+<div aria-labelledby='myLargeModalLabel' class='modal fade how-to-use' role='dialog' tabindex='-1'>
+  <div class='modal-dialog modal-lg'>
+    <div class='modal-content'>
+      <div class='modal-header'> <button aria-label='Close' class='close' data-dismiss='modal' type='button'><span aria-hidden='true'>&#215;</span></button> <h4 class='modal-title' id='myLargeModalLabel'><i class='fad fa-laptop-code'/> Developer Tool</h4> </div>
+      <div class='modal-body text-left'>
+        <p>Click on the code and <kbd><kbd>CTRL</kbd> + <kbd>C</kbd></kbd> on your keyboard. Put this code before the <mark>&amp;lt;/body&amp;gt;</mark>, </p>
+        <div class='form-group'>
+<textarea class='form-control' id='textArea' onclick='this.focus();this.select()' readonly='readonly' rows='11'>
+<script type='text/javascript'>
+//<![CDATA[
+protected_links = "almaftuchin.com,youtube.com,facebook.com,google.com,twitter.com"; 
+  (function() {
+    var sl = document.createElement('script');
+    sl.type = 'text/javascript'; sl.async = true;
+    sl.src = 'https://cdn.almaftuchin.com/js/safelink.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(sl);
+  })();
+//]]>
+</script></textarea>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div aria-labelledby='mySmallModalLabel3' class='modal fade how-to-get' role='dialog' tabindex='-1'>
+  <div class='modal-dialog modal-sm'>
+    <div class='modal-content'>
+      <div class='modal-header'> <button aria-label='Close' class='close' data-dismiss='modal' type='button'><span aria-hidden='true'>&#215;</span></button> <h4 class='modal-title' id='mySmallModalLabel3'><strong><i class='fad fa-bell'/> Notification</strong></h4> </div>
+      <div class='modal-body text-left'>
+        <p>About Almaftuchin Safelink</p>
+        <p>This tool is free to use. You can use our tool to protect your link from viruses and malware.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<b:if cond='data:blog.pageType != &quot;item&quot; and data:blog.pageType != &quot;static_page&quot;'>
+
+<div id='converter'>
+<div class='container'>
+
+  <div class='text-center margin-bottom-20'>
+<h3><i class='fad fa-ad'/></h3>
+<center>
+<!-- Safelink Almaftuchin Responsive -->
+<ins class='adsbygoogle' data-ad-client='ca-pub-7960831744476752' data-ad-slot='6382251738' style='display:inline-block;width:728px;height:90px'/>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</center>
+  </div>
+
 <div class='row'>
 <div class='container'>
   <div class='col-md-8 col-md-offset-2'>
@@ -363,13 +426,50 @@ function outFunc() {
     input = document.getElementById('inputURL');
   input.onkeyup = function() {
     if (input.value != "") {
-      output.value = "https://secure.almaftuchin.com/url?s=" + Base64.encode(this.value); //change with your link
+      output.value = "https://url.almaftuchin.com/p/go.html?url=" + Base64.encode(this.value); //change with your link
     } else {
       output.value = "";
     }
   }
 //]]>
 </script>
+<div class='clearfix'/>
+<div class='margin-bottom-20'>
+  <div class='col-md-4 text-center'>
+<h3><i class='fad fa-ad'/></h3>
+<!-- Safelink Almaftuchin 300x250 1 -->
+<ins class='adsbygoogle' data-ad-client='ca-pub-7960831744476752' data-ad-slot='9620210047' style='display:inline-block;width:300px;height:250px'/>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class='col-md-4 margin-top-25'>
+<div class='panel panel-info'>
+  <div class='panel-heading'><h2 class='panel-title'><i class='fad fa-question'/> <strong>How to use our tool:</strong></h2></div>
+  <div class='panel-body'>
+<ol>
+<li>Put the link on the <strong>Safe Link Converter</strong> box with <strong>http://</strong> or <strong>https://</strong></li>
+<li>Use <kbd><kbd>CTRL</kbd> + <kbd>V</kbd></kbd> on keyboard to put the link.</li>
+<li>Click the <strong>Safe Link Now!</strong> button to get encrypted link.</li>
+<li>Click the <strong>Copy your link to clipboard!</strong></li>
+<li>Done.</li>
+</ol>
+  </div>
+</div>
+</div>
+ <div class='col-md-4 text-center'>
+<h3><i class='fad fa-ad'/></h3>
+<!-- Safelink Almaftuchin 300x250 2 -->
+<ins class='adsbygoogle' data-ad-client='ca-pub-7960831744476752' data-ad-slot='2139630681' style='display:inline-block;width:300px;height:250px'/>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class='clearfix'/>
+</div>
+
+  </div> 
+  </div> 
 <!-- Safe -->
 	    
 <!-- Support JS -->
