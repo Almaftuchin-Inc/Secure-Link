@@ -27,6 +27,131 @@
 
   
   
+  
+  
+  
+  
+  
+  
+<script src='https://secure.almaftuchin.com/assets/js/secure.js' type='text/javascript'/>
+<script type='text/javascript'>
+protected_links = &quot;domain.com,example.com&quot;;
+auto_safelink();
+</script>
+  
+
+
+
+
+
+
+
+
+
+
+<script type='text/javascript'>
+function myCopy() {
+  var copyText = document.getElementById("resultLink");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  
+  var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Copied";
+}
+
+function outFunc() {
+  var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Copy Link";
+}
+  var output = document.getElementById('resultLink'),
+    input = document.getElementById('inputURL');
+  input.onkeyup = function() {
+    if (input.value != "") {
+      output.value = "https://secure.almaftuchin.com/url?s=" + Base64.encode(this.value); //change with your link
+    } else {
+      output.value = "";
+    }
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type='text/javascript'>
+var blog = document.location.hostname;
+var slug = document.location.pathname;
+var ctld = blog.substr(blog.lastIndexOf("."));
+if (ctld != ".com") {
+var ncr = "https://" + blog.substr(0, blog.indexOf("."));
+ncr += ".blogspot.com/ncr" + slug;
+window.location.replace(ncr); };
+
+var currentURL=location.href;
+var str = currentURL;
+  var res = str.replace("http://www.safelink.ga/p/generate.html?url=", "");
+$(".Visit_Link").hide();
+function changeLink(){
+    var decodedString = Base64.decode(res);
+    window.open(decodedString,'_self')
+}
+
+function generate() {
+    var linkDL = document.getElementById("download"),
+        linkAL = document.getElementById("download2"),
+        btn = document.getElementById("btn"),
+        notif = document.getElementById("daplong"),
+        direklink = document.getElementById("download").href,
+        waktu = 4;
+    var teks_waktu = document.createElement("span");
+    linkDL.parentNode.replaceChild(teks_waktu, linkDL);
+    var id;
+    id = setInterval(function () {
+        waktu--;
+        if (waktu < 0) {
+            teks_waktu.parentNode.replaceChild(linkDL, teks_waktu);
+            clearInterval(id);
+            notif.style.display = "none";
+            linkDL.style.display = "inline";
+            linkAL.style.display = "inline";
+        } else {
+            teks_waktu.innerHTML = "<h3 class='text-danger'>Link will appear in " + waktu.toString() + " Second</h3>";
+            btn.style.display = "none";
+        }
+    }, 2000);
+}
+
+cookieOptions = {
+    msg: "This site uses cookies to help deliver services. By using this site, you agree to the use of cookies.",
+    link: "https://secure.almaftuchin.com/cookies",
+    close: "Got it!",
+    learn: "Learn More" };
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <style type='text/css'>
 h2,h3{margin-top:0}
 a:active,a:focus,button.alert.alert-dismissible:active,button.alert.alert-dismissible:focus,button:active,button:focus{outline:0!important}
@@ -271,108 +396,6 @@ a {
 </div>
 
 
-
-
-
-
-
-
-
-
-
-<script type='text/javascript'>
-function myCopy() {
-  var copyText = document.getElementById("resultLink");
-  copyText.select();
-  copyText.setSelectionRange(0, 99999);
-  document.execCommand("copy");
-  
-  var tooltip = document.getElementById("myTooltip");
-  tooltip.innerHTML = "Copied";
-}
-
-function outFunc() {
-  var tooltip = document.getElementById("myTooltip");
-  tooltip.innerHTML = "Copy Link";
-}
-  var output = document.getElementById('resultLink'),
-    input = document.getElementById('inputURL');
-  input.onkeyup = function() {
-    if (input.value != "") {
-      output.value = "https://secure.almaftuchin.com/url?s=" + Base64.encode(this.value); //change with your link
-    } else {
-      output.value = "";
-    }
-  }
-</script>
-
-
-
-      
-      
-      
-      
-
-  
-  
-<script src='https://secure.almaftuchin.com/assets/js/secure.js' type='text/javascript'/>
-<script type='text/javascript'>
-protected_links = &quot;domain.com,example.com&quot;;
-auto_safelink();
-</script>
-
-
-
-
-<script type='text/javascript'>
-var blog = document.location.hostname;
-var slug = document.location.pathname;
-var ctld = blog.substr(blog.lastIndexOf("."));
-if (ctld != ".com") {
-var ncr = "https://" + blog.substr(0, blog.indexOf("."));
-ncr += ".blogspot.com/ncr" + slug;
-window.location.replace(ncr); };
-
-var currentURL=location.href;
-var str = currentURL;
-  var res = str.replace("http://www.safelink.ga/p/generate.html?url=", "");
-$(".Visit_Link").hide();
-function changeLink(){
-    var decodedString = Base64.decode(res);
-    window.open(decodedString,'_self')
-}
-
-function generate() {
-    var linkDL = document.getElementById("download"),
-        linkAL = document.getElementById("download2"),
-        btn = document.getElementById("btn"),
-        notif = document.getElementById("daplong"),
-        direklink = document.getElementById("download").href,
-        waktu = 4;
-    var teks_waktu = document.createElement("span");
-    linkDL.parentNode.replaceChild(teks_waktu, linkDL);
-    var id;
-    id = setInterval(function () {
-        waktu--;
-        if (waktu < 0) {
-            teks_waktu.parentNode.replaceChild(linkDL, teks_waktu);
-            clearInterval(id);
-            notif.style.display = "none";
-            linkDL.style.display = "inline";
-            linkAL.style.display = "inline";
-        } else {
-            teks_waktu.innerHTML = "<h3 class='text-danger'>Link will appear in " + waktu.toString() + " Second</h3>";
-            btn.style.display = "none";
-        }
-    }, 2000);
-}
-
-cookieOptions = {
-    msg: "This site uses cookies to help deliver services. By using this site, you agree to the use of cookies.",
-    link: "https://secure.almaftuchin.com/cookies",
-    close: "Got it!",
-    learn: "Learn More" };
-</script>
 
 
 </body>
